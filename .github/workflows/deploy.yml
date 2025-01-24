@@ -40,21 +40,25 @@ jobs:
           username: ${{ vars.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
-      - name: Build and push
+      - name: Build and push to preprod
         if: github.ref == 'refs/heads/dev'
         uses: docker/build-push-action@v6
         with:
           context: .
           push: true
-          tags: ${{ vars.DOCKER_USERNAME }}/dev-fasm-website:latest
+          tags: ${{ vars.DOCKER_USERNAME }}/preprod-fasm-website:latest
+          build-args: |
+            TARGET=preprod
 
-      - name: Build and push
+      - name: Build and push to prod
         if: github.event.pull_request.merged == true
         uses: docker/build-push-action@v6
         with:
           context: .
           push: true
           tags: ${{ vars.DOCKER_USERNAME }}/prod-fasm-website:latest
+          build-args: |
+            TARGET=prod
 
       - name: Deploy to Preprod
         if: github.ref == 'refs/heads/dev'
