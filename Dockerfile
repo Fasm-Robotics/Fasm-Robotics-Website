@@ -1,5 +1,5 @@
-# Stage 1: Build the app
-FROM node:20 as buildpreprod
+# Stage 1: Preprod Setup
+FROM node:20 AS preprod
 
 WORKDIR /app
 
@@ -7,37 +7,29 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 
-# Copy the source code and build the app
+# Copy the source code
 COPY . .
-RUN npm run build:preprod
 
-FROM node:20 as buildprod
-
-WORKDIR /app
-
-# Install dependencies
-COPY package.json package-lock.json ./
-RUN npm ci
-
-# Copy the source code and build the app
-COPY . .
-RUN npm run build:prod
-
-# Stage 2: Preprod Deployment
-FROM nginx:stable-alpine as preprod
-
-# Copy the prebuilt app
-COPY --from=buildpreprod /app/build /usr/share/nginx/html
-
-# Stage 3: Prod Deployment
-FROM nginx:stable-alpine as prod
-
-# Copy the prebuiltclapp
-COPY --from=buildprod /app/build /usr/share/nginx/html
-
-# Expose port for Nginx
-EXPOSE 80
+# Expose port for preprod
 EXPOSE 8080
 
-# Nginx will serve the content
-CMD ["nginx", "-g", "daemon off;"]
+# Start the application in preprod mode
+CMD ["npm", "start"]
+
+# Stage 2: Prod Setup
+FROM node:20 AS prod
+
+WORKDIR /app
+
+# Install dependencies
+COPY package.json package-lock.json ./
+RUN npm ci
+
+# Copy the source code
+COPY . .
+
+# Expose port for prod
+EXPOSE 80
+
+# Start the application in prod mode
+CMD ["npm", "start"]
