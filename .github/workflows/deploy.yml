@@ -63,9 +63,9 @@ jobs:
       - name: Deploy to Preprod
         if: github.ref == 'refs/heads/dev'
         run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "docker pull preprod-fasm-website && docker stop preprod-container || true && docker rm preprod-container || true && docker run -d --name preprod-container -p 8080:80 -v ${{ secrets.PREPROD_PATH }}:/usr/share/nginx/html preprod-fasm-website"
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "docker pull fasmrobotics/preprod-fasm-website && docker stop preprod-container || true && docker rm preprod-container || true && docker run -d --name preprod-container -p 8080:80 -v ${{ secrets.PREPROD_PATH }}:/usr/share/nginx/html fasmrobotics/preprod-fasm-website"
 
       - name: Deploy to Prod
         if: github.event.pull_request.merged == true
         run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "docker pull prod-fasm-website && docker stop prod-container || true && docker rm prod-container || true && docker run -d --name prod-container -p 80:80 -v ${{ secrets.PROD_PATH }}:/usr/share/nginx/html prod-fasm-website"
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "docker pull fasmrobotics/prod-fasm-websitte && docker stop prod-container || true && docker rm prod-container || true && docker run -d --name prod-container -p 80:80 -v ${{ secrets.PROD_PATH }}:/usr/share/nginx/html fasmrobotics/prod-fasm-website"
