@@ -11,8 +11,7 @@ on:
 
 jobs:
   build:
-
-    runs-on: self-hosted
+    runs-on: ${{ github.event_name == 'pull_request' && 'self-hosted' || join(['self-hosted', 'dev'], ',') }}
 
     strategy:
       matrix:
