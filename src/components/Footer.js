@@ -49,7 +49,6 @@ function Footer() {
         </IconLink>
       </SocialIcons>
       <FooterText>Email: contact@fasmrobotics.com</FooterText>
-        Tu le verras jamais salope
     </FooterContainer>
   );
 }
