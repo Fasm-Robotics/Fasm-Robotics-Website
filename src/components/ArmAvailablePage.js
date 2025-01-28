@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import TextAnimation from './TextAnimation';
-import { JoinButton } from './CreativeBtn';
 import GridSection from './GridSection';
+import { ArrowRight } from 'lucide-react';
+import ShinyText from './ShinyText';
+import LastUpdates from './LastUpdates';
 
 const PageContainer = styled.div`
   display: flex;
@@ -17,32 +19,6 @@ const PageContainer = styled.div`
 const Content = styled.div`
   text-align: center;
   margin-bottom: 50px;
-`;
-
-const Title = styled.h1`
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-`;
-
-const Subtitle = styled.p`
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-`;
-
-const Button = styled.a`
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #333333;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: #d3d3d3;
-  }
 `;
 
 const GradientSection = styled.div`
@@ -66,23 +42,33 @@ const SectionText = styled.div`
   word-wrap: break-word; /* Empêche les mots trop longs d'être coupés */
 `;
 
-const MainText = styled.h1`
-  font-size: 2.5rem;
+const DiscoverButton = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 10px 30px;
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  border-radius: 5px;
   font-weight: bold;
-  margin-bottom: 20px;
-`;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  gap: 10px;
+  overflow: hidden;
 
-const SubText = styled.p`
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  line-height: 1.6;
+  &:hover {
+    background-color: white;
+    color: black;
+  }
 `;
 
 function ArmAvailablePage() {
   return (
     <>
-      <PageContainer>
-        <Content>
+      <PageContainer className="flex flex-col items-center justify-center h-screen -mt-10">
+        <Content className="text-center">
           <TextAnimation
             text="FASM Robotic Arm Available"
             variants={{
@@ -90,7 +76,7 @@ function ArmAvailablePage() {
               visible: {
                 opacity: 1,
                 y: 0,
-                transition: { ease: 'easeInOut', duration: 0.6 },
+                transition: { ease: 'easeInOut', duration: 0.8 },
               },
             }}
             classname="text-5xl font-bold"
@@ -102,12 +88,17 @@ function ArmAvailablePage() {
               visible: {
                 opacity: 1,
                 y: 0,
-                transition: { delay: 0.2, ease: 'easeInOut', duration: 0.6 },
+                transition: { delay: 0.2, ease: 'easeInOut', duration: 0.8 },
               },
             }}
             classname="text-xl mt-4"
           />
-          <JoinButton />
+          <div className="flex justify-center mt-8">
+            <DiscoverButton href="/arm-available">
+              <ShinyText text="Discover Now" speed={3} />
+              <ArrowRight />
+            </DiscoverButton>
+          </div>
         </Content>
       </PageContainer>
 
@@ -138,21 +129,21 @@ function ArmAvailablePage() {
             classname="text-4xl font-bold mt-2"
           />
           <TextAnimation
-  text="Our robotic arm is designed to replicate and automate the most precise and repetitive tasks, bringing convenience and innovation to your daily life."
-  variants={{
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { ease: 'easeInOut', duration: 1 },
-    },
-  }}
-  classname="text-xl max-w-[800px] mx-auto leading-6"
-/>
-
+            text="Our robotic arm is designed to replicate and automate the most precise and repetitive tasks, bringing convenience and innovation to your daily life."
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { ease: 'easeInOut', duration: 1 },
+              },
+            }}
+            classname="text-xl max-w-[800px] mx-auto leading-6"
+          />
         </SectionText>
       </GradientSection>
       <GridSection />
+      <LastUpdates />
     </>
   );
 }

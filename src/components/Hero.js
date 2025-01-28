@@ -1,10 +1,12 @@
 import styled from 'styled-components';
-import { DiscoverButton, JoinButton } from './CreativeBtn';
-import { RandomizedTextEffect } from './RandomizedTextEffect';
+import { JoinButton } from './CreativeBtn';
+import BlurText from './BlurText';
+import { ArrowRight } from 'lucide-react';
+import ShinyText from './ShinyText';
 
 const HeroSection = styled.div`
   position: relative;
-  height: 100vh; // 100% de la hauteur de la fenêtre de visualisation
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,8 +15,6 @@ const HeroSection = styled.div`
   text-align: center;
   padding: 15px;
   overflow: hidden;
-
-  // Superpose une légère couleur en transparence pour améliorer la lisibilité du texte
   &::before {
     content: '';
     position: absolute;
@@ -22,7 +22,7 @@ const HeroSection = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); // Couche sombre
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1;
   }
 `;
@@ -38,7 +38,7 @@ const BackgroundVideo = styled.video`
 `;
 
 const ContentWrapper = styled.div`
-  position: relative; // Position relative pour superposer le contenu
+  position: relative;
   z-index: 2; // Devant la vidéo
 `;
 
@@ -46,30 +46,35 @@ const ButtonsContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px; /* Espacement entre les boutons */
+  gap: 20px;
   margin-top: 20px;
 `;
 
-const HeroHeadline = styled.h1`
-  color: #d3d3d3;
+const HeroHeadline = styled.div`
   font-size: 3em;
+  margin-bottom: 10px;
 `;
 
-const HeroSubHeadline = styled.p`
-  color: #d3d3d3;
+const HeroSubHeadline = styled.div`
   font-size: 1.5em;
+  margin-bottom: 20px;
 `;
 
-const HeroButton = styled.button`
-  margin: 20px;
-  padding: 10px 20px;
-  background-color: #333333;
+const DiscoverButton = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 10px 30px;
+  background-color: black;
   color: white;
-  border: none;
+  border: 2px solid black;
   border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  gap: 10px;
+  overflow: hidden;
 
   &:hover {
     background-color: white;
@@ -81,25 +86,43 @@ function Hero() {
   const scrollToSection = () => {
     document.getElementById('new-section').scrollIntoView({ behavior: 'smooth' });
   };
+
   return (
     <HeroSection>
-      {/* Vidéo en arrière-plan */}
+
       <BackgroundVideo autoPlay loop muted playsInline>
-        <source src="/videos/background.mp4" type="video/mp4" />
+        <source src="/videos/back.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </BackgroundVideo>
 
-      {/* Contenu */}
       <ContentWrapper>
         <HeroHeadline>
-          <RandomizedTextEffect text="Welcome to the FASM Robotics Society" />
+          <BlurText
+            text="Welcome to the FASM Robotics Society"
+            delay={70}
+            className="text-4xl font-bold"
+            animateBy="letters"
+            direction="top"
+          />
         </HeroHeadline>
         <HeroSubHeadline>
-          <RandomizedTextEffect text="Intelligent robotic solutions designed to simplify everyday challenges." />
+          <BlurText
+            text="Intelligent robotic solutions designed to simplify everyday challenges."
+            delay={150}
+            className="text-xl"
+            animateBy="words"
+            direction="bottom"
+          />
         </HeroSubHeadline>
         <ButtonsContainer>
-          <DiscoverButton />
-          <JoinButton />
+          <DiscoverButton href="/arm-available">
+          <ShinyText text="Discover Now" speed={3} />
+          <ArrowRight />
+          </DiscoverButton>
+          <DiscoverButton href="/join-community">
+          <ShinyText text="Join the Society" speed={3} />
+          <ArrowRight />
+          </DiscoverButton>
         </ButtonsContainer>
       </ContentWrapper>
     </HeroSection>

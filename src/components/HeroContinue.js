@@ -1,15 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ArrowRight } from 'lucide-react';
+import ShinyText from './ShinyText';
 
 const SectionWrapper = styled.div`
-  height: 100vh; /* Prend toute la hauteur de la fenêtre */
+  height: 100vh;
   background: linear-gradient(to bottom, #202020, #333333);
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centre verticalement */
-  align-items: center; /* Centre horizontalement */
+  justify-content: center;
+  align-items: center;
   text-align: center;
   padding: 20px;
 `;
@@ -30,6 +31,7 @@ const DiscoverButton = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   padding: 10px 30px;
   background-color: black;
   color: white;
@@ -39,6 +41,7 @@ const DiscoverButton = styled.a`
   text-decoration: none;
   transition: all 0.3s ease-in-out;
   gap: 10px;
+  overflow: hidden;
 
   &:hover {
     background-color: white;
@@ -54,7 +57,8 @@ function NewSection() {
         Explore cutting-edge robotic technologies designed to revolutionize daily life.
       </SectionText>
       <DiscoverButton href="/arm-available">
-        Discover <ArrowRight />
+        <ShinyText text="Discover Now" speed={3} />
+        <ArrowRight />
       </DiscoverButton>
     </SectionWrapper>
   );

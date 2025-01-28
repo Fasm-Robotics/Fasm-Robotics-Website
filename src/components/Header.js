@@ -2,17 +2,21 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Drawer } from 'vaul';
+//import folder for githubbutton the name is GitHubButton and the export name is Liquid
+import { Liquid } from './GitHubButton';
 
 const HeaderContainer = styled.header`
   position: sticky;
   top: 0;
   z-index: 50;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5); /* Couleur noire semi-transparente */
   color: white;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px); /* Safari */
 `;
 
 const Logo = styled.div`
@@ -61,8 +65,19 @@ function ResponsiveHeader() {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/company">Company</NavLink>
         <NavLink to="/arm-available">Arm</NavLink>
-        <NavLink to="/roadmap">Roadmap</NavLink>
+        <NavLink to="/RoadMap">Roadmap</NavLink>
       </Nav>
+      <div className="relative flex items-center justify-center w-24 h-4 rounded-lg overflow-hidden bg-black shadow-lg">
+        <a
+          href="https://github.com/Fasm-Robotics"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative flex items-center justify-center w-full h-full"
+        >
+          <Liquid isHovered={false} />
+          <span className="absolute z-10 text-white font-semibold text-sm">GitHub</span>
+        </a>
+      </div>
       <MenuButton onClick={() => setIsOpen(!isOpen)}>☰</MenuButton>
       <Drawer.Root open={isOpen} onOpenChange={setIsOpen}>
         <Drawer.Portal>

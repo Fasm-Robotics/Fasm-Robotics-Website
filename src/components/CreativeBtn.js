@@ -26,7 +26,7 @@ export const DiscoverButton = () => {
 export const JoinButton = () => {
   return (
     <a
-      className="flex gap-2 items-center justify-center px- py-3 w-50 bg-black text-white hover:bg-white hover:text-black border-black transition-all border-2 rounded-full font-semibold"
+      className="flex gap-1 items-center justify-center px-3 py-1 w-60 bg-black text-white hover:bg-white hover:text-black border-black transition-all border-2 rounded-full font-semibold text-sm"
       href="/join-community"
     >
       Join the Society
