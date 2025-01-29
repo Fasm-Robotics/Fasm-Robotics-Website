@@ -5,6 +5,10 @@ import GridSection from './GridSection';
 import { ArrowRight } from 'lucide-react';
 import ShinyText from './ShinyText';
 import LastUpdates from './LastUpdates';
+import piano from '../assets/piano.jpg';
+import poing from '../assets/poing.jpg';
+import robot from '../assets/robot.jpg';
+import LinearCard from './Linear-Card'; 
 
 const PageContainer = styled.div`
   display: flex;
@@ -12,7 +16,7 @@ const PageContainer = styled.div`
   justify-content: flex-end;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(135deg, #2c2c2c, #3e3e3e);
+  background: url(${poing}) center/cover no-repeat;
   color: white;
 `;
 
@@ -28,18 +32,18 @@ const GradientSection = styled.div`
   align-items: center;
   text-align: center;
   height: 100vh;
-  background: linear-gradient(135deg, #2c2c2c, #d9d9d9);
+  background: url(${robot}) center/cover no-repeat;
   padding: 20px;
   color: white;
-  overflow: visible; /* Assure que rien n'est coupé */
+  overflow: visible;
 `;
 
 const SectionText = styled.div`
-  max-width: 800px; /* Augmente cette valeur si nécessaire */
+  max-width: 800px;
   margin: 0 auto;
-  padding: 0 20px; /* Ajoute un padding pour éviter que le texte ne touche les bords */
+  padding: 0 20px;
   text-align: center;
-  word-wrap: break-word; /* Empêche les mots trop longs d'être coupés */
+  word-wrap: break-word;
 `;
 
 const DiscoverButton = styled.a`
@@ -144,6 +148,11 @@ function ArmAvailablePage() {
       </GradientSection>
       <GridSection />
       <LastUpdates />
+      <LinearCard
+        title="FASM Robotic Arm"
+        description="The FASM Robotic Arm is a state-of-the-art robotic arm designed to replicate and automate the most precise and repetitive tasks, bringing convenience and innovation to your daily life."
+        url={piano}
+      />
     </>
   );
 }

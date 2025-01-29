@@ -88,7 +88,7 @@ function Hero() {
   };
 
   return (
-    <HeroSection>
+    <HeroSection style={{ marginTop: '-3rem' }}>
 
       <BackgroundVideo autoPlay loop muted playsInline>
         <source src="/videos/back.mp4" type="video/mp4" />
@@ -115,9 +115,9 @@ function Hero() {
           />
         </HeroSubHeadline>
         <ButtonsContainer>
-          <DiscoverButton href="/arm-available">
-          <ShinyText text="Discover Now" speed={3} />
-          <ArrowRight />
+        <DiscoverButton as="button" onClick={scrollToSection}>
+            <ShinyText text="Discover Now" speed={3} />
+            <ArrowRight />
           </DiscoverButton>
           <DiscoverButton href="/join-community">
           <ShinyText text="Join the Society" speed={3} />

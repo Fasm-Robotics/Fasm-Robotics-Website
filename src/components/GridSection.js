@@ -5,6 +5,10 @@ import img3 from '../assets/3.jpg';
 import img4 from '../assets/4.jpg';
 import img6 from '../assets/6.jpg';
 import TiltedCard from './TiltedCard';
+import salut from '../assets/salut.jpg';
+import piano from '../assets/piano.jpg';
+import doigt from '../assets/doigt.jpg';
+import banc from '../assets/banc.jpg';
 
 const GridContainer = styled.div`
   display: grid;
@@ -19,21 +23,21 @@ const GridContainer = styled.div`
 const projects = [
   {
     id: '01',
-    img: img2,
+    img: banc,
     title: 'Softer',
     description: 'A soft-bodied effector. As plush as a stuffed animal.',
     colSpan: 2, // Spans two columns
   },
   {
     id: '02',
-    img: img3,
+    img: piano,
     title: 'Better',
     description: 'Biomorphic design. Straight out of science fiction.',
     rowSpan: 1, // Normal
   },
   {
     id: '03',
-    img: img4,
+    img: doigt,
     title: 'Faster',
     description:
       'Myofibers that contract faster than human skeletal muscle fibers.',
@@ -41,7 +45,7 @@ const projects = [
   },
   {
     id: '04',
-    img: img6,
+    img: salut,
     title: 'Stronger',
     description: 'Human-level strength. Even in the fingers.',
     colSpan: 2, // Spans two columns
@@ -62,10 +66,10 @@ function GridComponent() {
           imageHeight="100%"
           imageWidth="100%"
           rotateAmplitude={8}
-          scaleOnHover={1.1}
+          scaleOnHover={1}
           showMobileWarning={false}
           showTooltip={true}
-          displayOverlayContent={true}
+          displayOverlayContent={false}
           overlayContent={
             <div>
               <h3 style={{ margin: 0, fontSize: '1.2rem', color: 'white' }}>

@@ -3,21 +3,24 @@ import Carousel from './Carousel';
 import img2 from '../assets/2.jpg';
 import img3 from '../assets/3.jpg';
 import img4 from '../assets/4.jpg';
-import img6 from '../assets/6.jpg';
+import piano from '../assets/piano.jpg';
+import poing from '../assets/poing.jpg';
+import main from '../assets/main.jpg';
+import banc from '../assets/banc.jpg';
 
 const slides = [
   {
-    image: img2,
+    image: main,
     title: 'New Things',
     description: 'This is the first slide',
   },
   {
-    image: img3,
+    image: poing,
     title: 'New Update',
     description: 'This is the second slide',
   },
   {
-    image: img4,
+    image: banc,
     title: 'New Stuff',
     description: 'This is the third slide',
   },
