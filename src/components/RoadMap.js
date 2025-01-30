@@ -1,113 +1,152 @@
 import React from 'react';
 import styled from 'styled-components';
+import { CheckCircle, Settings, ShoppingBag, CreditCard, TrendingUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const RoadmapContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: linear-gradient(to bottom, #1f1f1f, #2c2c2c);
   padding: 50px 20px;
-  background: linear-gradient(135deg, #202020, #333333);
   color: white;
 `;
 
-const Title = styled.h2`
-  font-size: 2.5rem;
+const RoadmapTitle = styled.h1`
+  font-size: 3rem;
   font-weight: bold;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+  text-align: center;
 `;
 
 const Timeline = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
-  width: 100%;
-  max-width: 1200px;
-  overflow-x: auto;
-  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
+`;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: #555;
-    transform: translateY(-50%);
-    z-index: 1;
-  }
+const Line = styled.div`
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #6a5acd, #48c9b0);
+  transform: translateX(-50%);
 `;
 
 const Step = styled(motion.div)`
   position: relative;
-  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 20px;
   background: #333;
-  color: white;
+  border-radius: 15px;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  min-width: 150px;
-  margin: 0 20px;
-  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 
-  &:hover {
-    background: #555;
-    transform: scale(1.1);
+  &:nth-child(odd) {
+    align-self: flex-start;
   }
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -40px;
-    width: 20px;
-    height: 20px;
-    background: #555;
-    border-radius: 50%;
-    transform: translateY(-50%);
-  }
-
-  &:first-child::after {
-    display: none; /* Masque la ligne pour le premier élément */
+  &:nth-child(even) {
+    align-self: flex-end;
   }
 `;
 
+const IconContainer = styled.div`
+  background: linear-gradient(to bottom right, #6a5acd, #48c9b0);
+  color: white;
+  border-radius: 50%;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+`;
+
+const StepContent = styled.div`
+  flex: 1;
+`;
+
 const StepTitle = styled.h3`
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 10px;
 `;
 
 const StepDescription = styled.p`
   font-size: 1rem;
-  margin: 0;
+  line-height: 1.5;
+  color: #ccc;
 `;
 
-const steps = [
-  { id: 1, title: 'Phase 1', description: 'Project Initialization' },
-  { id: 2, title: 'Phase 2', description: 'Research & Development' },
-  { id: 3, title: 'Phase 3', description: 'Prototyping' },
-  { id: 4, title: 'Phase 4', description: 'Testing & Feedback' },
-  { id: 5, title: 'Phase 5', description: 'Launch' },
-];
-
 function Roadmap() {
+  const steps = [
+    {
+      icon: <ShoppingBag size={24} />,
+      title: 'Step 1: Research Products',
+      description: 'Identify trending products that have high demand and low competition.',
+    },
+    {
+      icon: <Settings size={24} />,
+      title: 'Step 2: Set Up the Store',
+      description: 'Register and customize your online store with user-friendly tools.',
+    },
+    {
+      icon: <CreditCard size={24} />,
+      title: 'Step 3: Payment Integration',
+      description: 'Integrate secure payment methods to ensure smooth transactions.',
+    },
+    {
+      icon: <TrendingUp size={24} />,
+      title: 'Step 4: Launch Marketing Campaign',
+      description: 'Create ad campaigns to reach your target audience and drive sales.',
+    },
+    {
+      icon: <CheckCircle size={24} />,
+      title: 'Step 5: Optimize and Scale',
+      description: 'Analyze performance data to optimize and scale your business.',
+    },
+    {
+      icon: <CheckCircle size={24} />,
+      title: 'Step 6: Optimize and Scale',
+      description: 'Analyze performance data to optimize and scale your business.',
+    },
+    {
+      icon: <CheckCircle size={24} />,
+      title: 'Step 7: Optimize and Scale',
+      description: 'Analyze performance data to optimize and scale your business.',
+    },
+    {
+      icon: <CheckCircle size={24} />,
+      title: 'Step 8: Optimize and Scale',
+      description: 'Analyze performance data to optimize and scale your business.',
+    },
+  ];
+
   return (
     <RoadmapContainer>
-      <Title>Project Roadmap</Title>
+      <RoadmapTitle>FASM Robotics' Roadmap</RoadmapTitle>
       <Timeline>
+        <Line />
         {steps.map((step, index) => (
           <Step
-            key={step.id}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.3 }}
+            key={index}
+            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
           >
-            <StepTitle>{step.title}</StepTitle>
-            <StepDescription>{step.description}</StepDescription>
+            <IconContainer>{step.icon}</IconContainer>
+            <StepContent>
+              <StepTitle>{step.title}</StepTitle>
+              <StepDescription>{step.description}</StepDescription>
+            </StepContent>
           </Step>
         ))}
       </Timeline>

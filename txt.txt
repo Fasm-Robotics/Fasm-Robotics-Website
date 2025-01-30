@@ -1,7 +1,8 @@
 changer la font de merde 
 
 
-inverser la video
-rajouter 2/3 page dans disco / tiilted card /spotlight card /carouselle last update
-roadmap
+rajouter 1/2 page dans disco /spotlight card
+roadmap Liens interactifs : Faire en sorte que chaque étape contienne un lien ou un bouton vers une section ou page spécifique.
+Transition dynamique : Utiliser un dégradé animé dans les connecteurs entre chaque étape pour plus de fluidité.
+
 about us / elastic line fancy component / pixel transition react bits
