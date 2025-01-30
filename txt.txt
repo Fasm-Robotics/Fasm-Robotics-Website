@@ -1,8 +1,11 @@
 changer la font de merde 
 
+GITHUB BUTTON WITH 2ND FILE
 
 rajouter 1/2 page dans disco /spotlight card
-roadmap Liens interactifs : Faire en sorte que chaque étape contienne un lien ou un bouton vers une section ou page spécifique.
+MARGE NEGATIVE roadmap Liens interactifs : Faire en sorte que chaque étape contienne un lien ou un bouton vers une section ou page spécifique.
 Transition dynamique : Utiliser un dégradé animé dans les connecteurs entre chaque étape pour plus de fluidité.
 
-about us / elastic line fancy component / pixel transition react bits
+MARGE NEGATIVE about us / elastic line fancy component / pixel transition react bits
+
+Marge NEGATIVE JOIN SOCIETY 

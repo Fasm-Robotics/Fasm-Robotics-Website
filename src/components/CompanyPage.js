@@ -1,83 +1,140 @@
 import React from 'react';
 import styled from 'styled-components';
+import PixelTransition from './PixelTransition';
 
 const PageContainer = styled.div`
-  color: white;
-  background-color: #1a1a1a;
-  font-family: 'Arial', sans-serif;
-`;
-
-const HeaderSection = styled.div`
-  padding: 50px;
-  text-align: center;
-  background-image: url('/path-to-your-header-bg.jpg');
-  background-size: cover;
-`;
-
-const Section = styled.section`
-  padding: 50px;
-  border-bottom: 1px solid gray;
-`;
-
-const StatisticsSection = styled(Section)`
   display: flex;
-  justify-content: space-around;
-  text-align: center;
-`;
-
-const StatBox = styled.div`
-  margin: 0 20px;
-`;
-
-const FooterCallToAction = styled.div`
+  flex-direction: column;
+  gap: 50px;
   padding: 50px;
-  background-color: #333;
+  background: #1f1f1f;
+  color: white;
+`;
+
+const ImageContainer = styled.div`
+  flex: 1;
+  max-width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const PlaceholderImage = styled.div`
+  width: 100%;
+  height: 400px;
+  background: #444;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #aaa;
+  font-size: 1.5rem;
   text-align: center;
 `;
 
-const Button = styled.button`
-  background-color: #00aaff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-top: 20px;
+const Section = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70vh;
+  padding: 20px;
+  gap: 30px;
 `;
 
-const CompanyPage = () => {
+const Title = styled.h1`
+  font-size: 3rem;
+  font-weight: bold;
+`;
+
+const Description = styled.p`
+  font-size: 1.2rem;
+  max-width: 600px;
+  line-height: 1.6;
+`;
+
+const Image = styled.img`
+  width: 50%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+`;
+
+const TeamSection = styled.div`
+  margin-top: 50px;
+  text-align: center;
+`;
+
+const TeamTitle = styled.h2`
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+`;
+
+const CardsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+`;
+
+function CompanyPage() {
   return (
-    <PageContainer>
-      <HeaderSection>
-        <h1>Company Name</h1>
-        <p>Learn more about who we are and what we do.</p>
-      </HeaderSection>
+    <PageContainer style={{ marginTop: '-3rem' }}>
       <Section>
-        <h2>Who We Are</h2>
-        <p>Detailed description about the company, its history, and mission.</p>
+        <div>
+          <Title>Who are we?</Title>
+          <Description>
+            We are a team of robotics enthusiasts dedicated to creating cutting-edge solutions
+            that make a difference in people's lives. Our mission is to innovate and inspire.
+          </Description>
+        </div>
+        <ImageContainer>
+        <PlaceholderImage>Add your image here</PlaceholderImage>
+      </ImageContainer>
       </Section>
-      <StatisticsSection>
-        <StatBox>
-          <h3>4</h3>
-          <p>Active Members</p>
-        </StatBox>
-        <StatBox>
-          <h3>4</h3>
-          <p>Years of Experience</p>
-        </StatBox>
-        <StatBox>
-          <h3>1</h3>
-          <p>Branch Locations</p>
-        </StatBox>
-        <StatBox>
-          <h3>1</h3>
-          <p>Observatory Zones</p>
-        </StatBox>
-      </StatisticsSection>
-      <FooterCallToAction>
-        <p>Let's Explore With Us</p>
-        <Button>Join Us Now</Button>
-      </FooterCallToAction>
+
+      <TeamSection>
+        <TeamTitle>Meet Our Team</TeamTitle>
+        <CardsContainer>
+          {[...Array(4)].map((_, index) => (
+            <PixelTransition
+              key={index}
+              firstContent={
+                <img
+                  src={`https://via.placeholder.com/300x300?text=Member+${index + 1}`}
+                  alt={`Team Member ${index + 1}`}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+              }
+              secondContent={
+                <div
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    display: 'grid',
+                    placeItems: 'center',
+                    backgroundColor: '#111',
+                  }}
+                >
+                  <p
+                    style={{
+                      fontWeight: 900,
+                      fontSize: '1.5rem',
+                      color: '#ffffff',
+                    }}
+                  >
+                    Member {index + 1}
+                  </p>
+                </div>
+              }
+              gridSize={12}
+              pixelColor="#ffffff"
+              animationStepDuration={0.4}
+              className="custom-pixel-card"
+            />
+          ))}
+        </CardsContainer>
+      </TeamSection>
     </PageContainer>
   );
 }

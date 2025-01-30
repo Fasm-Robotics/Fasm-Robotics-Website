@@ -130,7 +130,7 @@ function Roadmap() {
   ];
 
   return (
-    <RoadmapContainer>
+    <RoadmapContainer style={{ marginTop: '-3rem' }}>
       <RoadmapTitle>FASM Robotics' Roadmap</RoadmapTitle>
       <Timeline>
         <Line />
