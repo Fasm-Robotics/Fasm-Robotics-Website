@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Drawer } from 'vaul';
-//import folder for githubbutton the name is GitHubButton and the export name is Liquid
 import { Liquid } from './GitHubButton';
 
 const HeaderContainer = styled.header`
@@ -43,6 +42,51 @@ const NavLink = styled(Link)`
   }
 `;
 
+const DropdownContainer = styled.div`
+  position: relative;
+
+  &:hover ul {
+    display: block;
+  }
+`;
+
+const DropdownButton = styled.div`
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    color: gray;
+  }
+`;
+
+const DropdownMenu = styled.ul`
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  list-style: none;
+
+  li {
+    margin: 5px 0;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+
+    &:hover {
+      color: gray;
+    }
+  }
+`;
+
 const MenuButton = styled.button`
   background: none;
   border: none;
@@ -65,8 +109,19 @@ function ResponsiveHeader() {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/company">Team</NavLink>
         <NavLink to="/arm-available">Arm</NavLink>
-        <NavLink to="/RoadMap">Roadmap</NavLink>
+        <NavLink to="/roadmap">Roadmap</NavLink>
         <NavLink to="/blog">Blog</NavLink>
+        <DropdownContainer>
+          <DropdownButton>Documentation</DropdownButton>
+          <DropdownMenu>
+            <li>
+              <Link to="/documentation/arm">Bras Robotique</Link>
+            </li>
+            <li>
+              <Link to="/documentation/interface">Interface Graphique</Link>
+            </li>
+          </DropdownMenu>
+        </DropdownContainer>
       </Nav>
       <div className="relative flex items-center justify-center w-24 h-4 rounded-lg overflow-hidden bg-black shadow-lg">
         <a
@@ -97,6 +152,21 @@ function ResponsiveHeader() {
               <NavLink to="/roadmap" onClick={() => setIsOpen(false)}>
                 Roadmap
               </NavLink>
+              <DropdownContainer>
+                <DropdownButton onClick={() => setIsOpen(!isOpen)}>Documentation</DropdownButton>
+                <DropdownMenu>
+                  <li>
+                    <NavLink to="/documentation/arm" onClick={() => setIsOpen(false)}>
+                      Bras Robotique
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/documentation/interface" onClick={() => setIsOpen(false)}>
+                      Interface Graphique
+                    </NavLink>
+                  </li>
+                </DropdownMenu>
+              </DropdownContainer>
             </nav>
           </Drawer.Content>
         </Drawer.Portal>

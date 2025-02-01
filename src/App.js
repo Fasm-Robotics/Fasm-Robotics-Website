@@ -9,6 +9,7 @@ import ArmAvailablePage from './components/ArmAvailablePage';
 import RoadMap from './components/RoadMap';
 import BlogPage from './components/BlogPage';
 import BlogPostPage from './components/BlogPostPage';
+import DocumentationPage from './components/DocumentationPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/roadmap" element={<RoadMap />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:id" element={<BlogPostPage />} />
+        <Route path="/documentation/:type" element={<DocumentationPage />} />
       </Routes>
       <Footer />
     </Router>
