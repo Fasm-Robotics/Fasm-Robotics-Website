@@ -7,6 +7,8 @@ import Footer from './components/Footer';
 import JoinCommunityPage from './components/JoinCommunityPage';
 import ArmAvailablePage from './components/ArmAvailablePage';
 import RoadMap from './components/RoadMap';
+import BlogPage from './components/BlogPage';
+import BlogPostPage from './components/BlogPostPage';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/join-community" element={<JoinCommunityPage />} />
         <Route path="/arm-available" element={<ArmAvailablePage />} />
         <Route path="/roadmap" element={<RoadMap />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:id" element={<BlogPostPage />} />
       </Routes>
       <Footer />
     </Router>

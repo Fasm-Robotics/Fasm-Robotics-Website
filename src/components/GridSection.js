@@ -69,7 +69,7 @@ function GridComponent() {
           scaleOnHover={1}
           showMobileWarning={false}
           showTooltip={true}
-          displayOverlayContent={false}
+          displayOverlayContent={true}
           overlayContent={
             <div>
               <h3 style={{ margin: 0, fontSize: '1.2rem', color: 'white' }}>

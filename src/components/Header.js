@@ -63,9 +63,10 @@ function ResponsiveHeader() {
       <Logo>FASM Robotics</Logo>
       <Nav>
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/company">Company</NavLink>
+        <NavLink to="/company">Team</NavLink>
         <NavLink to="/arm-available">Arm</NavLink>
         <NavLink to="/RoadMap">Roadmap</NavLink>
+        <NavLink to="/blog">Blog</NavLink>
       </Nav>
       <div className="relative flex items-center justify-center w-24 h-4 rounded-lg overflow-hidden bg-black shadow-lg">
         <a

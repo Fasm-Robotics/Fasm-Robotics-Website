@@ -1,0 +1,43 @@
+[
+    {
+      "id": "1",
+      "title": "Exploring the Future of Robotics",
+      "image": "/images/1.jpg",
+      "description": "This article delves into how robotics is shaping the future...",
+      "content": "This is the detailed content about robotics shaping the future.",
+      "date": "2025-01-28"
+    },
+    {
+      "id": "2",
+      "title": "AI and Machine Learning Trends",
+      "image": "/images/2.jpg",
+      "description": "Discover the latest trends in AI and machine learning...",
+      "content": "Detailed content about AI and Machine Learning Trends.",
+      "date": "2025-01-28"
+    },
+    {
+        "id": "3",
+        "title": "Exploring the Future of Robotics",
+        "image": "/images/1.jpg",
+        "description": "This article delves into how robotics is shaping the future...",
+        "content": "This is the detailed content about robotics shaping the future.",
+        "date": "2025-01-28"
+      },
+      {
+        "id": "4",
+        "title": "ouep the Future of Robotics",
+        "image": "/images/1.jpg",
+        "description": "This article delves into how robotics is shaping the future...",
+        "content": "This is the detailed content about robotics shaping the future.",
+        "date": "2025-01-28"
+      },
+      {
+        "id": "5",
+        "title": "cococ the Future of Robotics",
+        "image": "/images/1.jpg",
+        "description": "This article delves into how robotics is shaping the future...",
+        "content": "This is the detailed content about robotics shaping the future.",
+        "date": "2025-01-28"
+      }
+  ]
+  

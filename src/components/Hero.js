@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { JoinButton } from './CreativeBtn';
 import BlurText from './BlurText';
 import { ArrowRight } from 'lucide-react';
 import ShinyText from './ShinyText';

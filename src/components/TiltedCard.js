@@ -21,7 +21,7 @@ export default function TiltedCard({
   showMobileWarning = true,
   showTooltip = true,
   overlayContent = null,
-  displayOverlayContent = false,
+  displayOverlayContent = true,
 }) {
   const ref = useRef(null);
 
