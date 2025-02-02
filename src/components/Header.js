@@ -2,25 +2,32 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Drawer } from 'vaul';
-import { Liquid } from './GitHubButton';
+import GitHubButton from './GitHubButton';
 
 const HeaderContainer = styled.header`
   position: sticky;
   top: 0;
   z-index: 50;
-  background-color: rgba(0, 0, 0, 0.5); /* Couleur noire semi-transparente */
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px); /* Safari */
+  -webkit-backdrop-filter: blur(8px);
 `;
 
 const Logo = styled.div`
   font-size: 1.5rem;
   font-weight: bold;
+`;
+
+const ContentWrapper = styled.div`
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Nav = styled.nav`
@@ -99,41 +106,46 @@ const MenuButton = styled.button`
   }
 `;
 
+const GitHubButtonWrapper = styled.div`
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+`;
+
 function ResponsiveHeader() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <HeaderContainer>
       <Logo>FASM Robotics</Logo>
-      <Nav>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/company">Team</NavLink>
-        <NavLink to="/arm-available">Arm</NavLink>
-        <NavLink to="/roadmap">Roadmap</NavLink>
-        <NavLink to="/blog">Blog</NavLink>
-        <DropdownContainer>
-          <DropdownButton>Documentation</DropdownButton>
-          <DropdownMenu>
-            <li>
-              <Link to="/documentation/arm">Bras Robotique</Link>
-            </li>
-            <li>
-              <Link to="/documentation/interface">Interface Graphique</Link>
-            </li>
-          </DropdownMenu>
-        </DropdownContainer>
-      </Nav>
-      <div className="relative flex items-center justify-center w-24 h-4 rounded-lg overflow-hidden bg-black shadow-lg">
-        <a
-          href="https://github.com/Fasm-Robotics"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="relative flex items-center justify-center w-full h-full"
-        >
-          <Liquid isHovered={false} />
-          <span className="absolute z-10 text-white font-semibold text-sm">GitHub</span>
-        </a>
-      </div>
+      <ContentWrapper>
+        <Nav>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/company">Team</NavLink>
+          <NavLink to="/arm-available">Arm</NavLink>
+          <NavLink to="/roadmap">Roadmap</NavLink>
+          <NavLink to="/blog">Blog</NavLink>
+          <DropdownContainer>
+            <DropdownButton>Documentation</DropdownButton>
+            <DropdownMenu>
+              <li>
+                <Link to="/documentation/arm">Bras Robotique</Link>
+              </li>
+              <li>
+                <Link to="/documentation/interface">Interface Graphique</Link>
+              </li>
+            </DropdownMenu>
+          </DropdownContainer>
+        </Nav>
+      </ContentWrapper>
+      <GitHubButtonWrapper>
+        <GitHubButton />
+      </GitHubButtonWrapper>
       <MenuButton onClick={() => setIsOpen(!isOpen)}>☰</MenuButton>
       <Drawer.Root open={isOpen} onOpenChange={setIsOpen}>
         <Drawer.Portal>
@@ -153,7 +165,9 @@ function ResponsiveHeader() {
                 Roadmap
               </NavLink>
               <DropdownContainer>
-                <DropdownButton onClick={() => setIsOpen(!isOpen)}>Documentation</DropdownButton>
+                <DropdownButton onClick={() => setIsOpen(!isOpen)}>
+                  Documentation
+                </DropdownButton>
                 <DropdownMenu>
                   <li>
                     <NavLink to="/documentation/arm" onClick={() => setIsOpen(false)}>
