@@ -1,5 +1,5 @@
 const preview = {
-    galleryNew: 'images/1.jpg',
+    galleryNew: 'images/2.jpg',
   };
   
   export default preview;
