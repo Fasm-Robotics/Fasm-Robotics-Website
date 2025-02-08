@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PixelTransition from './PixelTransition';
+import team3 from '../assets/team3.jpg';
 
 const PageContainer = styled.div`
   display: flex;
@@ -89,8 +90,17 @@ function CompanyPage() {
           </Description>
         </div>
         <ImageContainer>
-        <PlaceholderImage>Add your image here</PlaceholderImage>
-      </ImageContainer>
+          <img
+            src={team3}
+            alt="Description de l'image"
+            style={{
+              width: '100%', 
+              height: '100%', 
+              objectFit: 'cover', // Pour ajuster l'image
+              borderRadius: '10px', // Coins arrondis
+            }}
+          />
+        </ImageContainer>
       </Section>
 
       <TeamSection>

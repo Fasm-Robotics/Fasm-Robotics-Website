@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { ArrowRight } from 'lucide-react';
 import ShinyText from './ShinyText';
@@ -76,10 +76,52 @@ const DiscoverButton = styled.a`
 `;
 
 function NewSection() {
+  const videoRef = useRef(null);
+  const [isVideoVisible, setIsVideoVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVideoVisible(true);
+        } else {
+          setIsVideoVisible(false);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    const section = document.getElementById('new-section');
+    if (section) {
+      observer.observe(section);
+    }
+
+    return () => {
+      if (section) {
+        observer.unobserve(section);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      if (isVideoVisible) {
+        videoRef.current.play();
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  }, [isVideoVisible]);
+
   return (
     <SectionWrapper id="new-section">
-      <VideoBackground autoPlay muted loop>
-        <source src="/videos/back_r.mp4" type="video/mp4" />
+      <VideoBackground
+        ref={videoRef}
+        muted
+        playsInline
+        playbackRate={0.8}
+      >
+        <source src="/videos/bras2.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </VideoBackground>
       <ContentWrapper>

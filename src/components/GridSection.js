@@ -5,6 +5,11 @@ import salut from '../assets/salut.jpg';
 import piano from '../assets/piano.jpg';
 import doigt from '../assets/doigt.jpg';
 import banc from '../assets/banc.jpg';
+import test from '../assets/untitled3.png';
+import test2 from '../assets/untitled4.png';
+import test3 from '../assets/untitled2.png';
+import test4 from '../assets/untitled1.png';
+import test5 from '../assets/untitled.png';
 
 const GridContainer = styled.div`
   display: grid;
@@ -19,26 +24,26 @@ const GridContainer = styled.div`
 const projects = [
   {
     id: '01',
-    img: banc,
+    img: test,
     title: 'Softer',
     description: 'A soft-bodied effector. As plush as a stuffed animal.',
   },
   {
     id: '02',
-    img: piano,
+    img: test2,
     title: 'Better',
     description: 'Biomorphic design. Straight out of science fiction.',
   },
   {
     id: '03',
-    img: doigt,
+    img: test5,
     title: 'Faster',
     description:
       'Myofibers that contract faster than human skeletal muscle fibers.',
   },
   {
     id: '04',
-    img: salut,
+    img: test4,
     title: 'Stronger',
     description: 'Human-level strength. Even in the fingers.',
   },

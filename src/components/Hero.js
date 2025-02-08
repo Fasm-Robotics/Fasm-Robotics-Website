@@ -1,3 +1,4 @@
+import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import BlurText from './BlurText';
 import { ArrowRight } from 'lucide-react';
@@ -32,13 +33,13 @@ const BackgroundVideo = styled.video`
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; // Couvre tout l'espace
-  z-index: 0; // Derrière tout le reste
+  object-fit: cover;
+  z-index: 0;
 `;
 
 const ContentWrapper = styled.div`
   position: relative;
-  z-index: 2; // Devant la vidéo
+  z-index: 2;
 `;
 
 const ButtonsContainer = styled.div`
@@ -82,15 +83,35 @@ const DiscoverButton = styled.a`
 `;
 
 function Hero() {
+  const videoRef = useRef(null);
+  const playbackRate = 0.8; // Définir la vitesse souhaitée ici
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = playbackRate;
+    }
+  }, [playbackRate]);
+
+  const handleVideoEnd = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+    }
+  };
+
   const scrollToSection = () => {
     document.getElementById('new-section').scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <HeroSection style={{ marginTop: '-3rem' }}>
-
-      <BackgroundVideo autoPlay loop muted playsInline>
-        <source src="/videos/back.mp4" type="video/mp4" />
+      <BackgroundVideo
+        ref={videoRef}
+        onEnded={handleVideoEnd}
+        autoPlay
+        muted
+        playsInline
+      >
+        <source src="/videos/bras1.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </BackgroundVideo>
 
@@ -114,13 +135,13 @@ function Hero() {
           />
         </HeroSubHeadline>
         <ButtonsContainer>
-        <DiscoverButton as="button" onClick={scrollToSection}>
+          <DiscoverButton as="button" onClick={scrollToSection}>
             <ShinyText text="Discover Now" speed={3} />
             <ArrowRight />
           </DiscoverButton>
           <DiscoverButton href="/join-community">
-          <ShinyText text="Join the Society" speed={3} />
-          <ArrowRight />
+            <ShinyText text="Join the Society" speed={3} />
+            <ArrowRight />
           </DiscoverButton>
         </ButtonsContainer>
       </ContentWrapper>

@@ -9,6 +9,7 @@ import piano from '../assets/piano.jpg';
 import poing from '../assets/poing.jpg';
 import robot from '../assets/robot.jpg';
 import LinearCard from './Linear-Card'; 
+import test3 from '../assets/untitled2.png';
 
 const PageContainer = styled.div`
   display: flex;
@@ -32,7 +33,7 @@ const GradientSection = styled.div`
   align-items: center;
   text-align: center;
   height: 100vh;
-  background: url(${robot}) center/cover no-repeat;
+  background: url(${test3}) center/cover no-repeat;
   padding: 20px;
   color: white;
   overflow: visible;
