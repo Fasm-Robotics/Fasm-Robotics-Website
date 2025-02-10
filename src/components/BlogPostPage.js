@@ -93,16 +93,16 @@ function BlogPostPage() {
       <ArticleContent>
   {article.content.map((block, index) => {
     if (typeof block === 'string') {
-      // Cas où c'est un texte normal
+      // normal text
       return <p key={index}>{block}</p>;
     } else if (block.type === 'image') {
-      // 🔍 Vérifier si l'URL de l'image est correcte
+      // look if its the good url
       console.log("Image path:", block.src);
 
       return (
         <BlogImage
           key={index}
-          src={`${process.env.PUBLIC_URL}${block.src}`} // 🔥 Force le bon chemin
+          src={`${process.env.PUBLIC_URL}${block.src}`} // get public url
           alt={block.alt || "Blog image"}
         />
       );
@@ -110,8 +110,6 @@ function BlogPostPage() {
     return null;
   })}
 </ArticleContent>
-
-
       <BackButton to="/blog">
         <ShinyText text="← Back to Blog" speed={3} />
       </BackButton>
