@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import BlurText from './BlurText';
 import { ArrowRight } from 'lucide-react';
 import ShinyText from './ShinyText';
+// import { ArrowRight } from 'lucide-react';
 
 const HeroSection = styled.div`
   position: relative;
@@ -84,7 +85,7 @@ const DiscoverButton = styled.a`
 
 function Hero() {
   const videoRef = useRef(null);
-  const playbackRate = 0.8; // Définir la vitesse souhaitée ici
+  const playbackRate = 0.8; // vitesse
 
   useEffect(() => {
     if (videoRef.current) {
@@ -139,10 +140,10 @@ function Hero() {
             <ShinyText text="Discover Now" speed={3} />
             <ArrowRight />
           </DiscoverButton>
-          <DiscoverButton href="/join-community">
+          {/*<DiscoverButton href="/join-community">
             <ShinyText text="Join the Society" speed={3} />
             <ArrowRight />
-          </DiscoverButton>
+          </DiscoverButton> wait to finish the society page */}
         </ButtonsContainer>
       </ContentWrapper>
     </HeroSection>

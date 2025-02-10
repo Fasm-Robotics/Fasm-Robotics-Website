@@ -98,12 +98,12 @@ function ArmAvailablePage() {
             }}
             classname="text-xl mt-4"
           />
-          <div className="flex justify-center mt-8">
+          {/*<div className="flex justify-center mt-8">
             <DiscoverButton href="/join-community">
               <ShinyText text="Join the Society" speed={3} />
               <ArrowRight />
             </DiscoverButton>
-          </div>
+          </div>  wait to finish the society page*/}
         </Content>
       </PageContainer>
 

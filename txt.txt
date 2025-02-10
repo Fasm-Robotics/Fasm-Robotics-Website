@@ -1,10 +1,9 @@
 changer la font de merde 
 
-rajouter 1/2 page dans disco /spotlight card
-roadmap Liens interactifs : Faire en sorte que chaque étape contienne un lien ou un bouton vers une section ou page spécifique.
-Transition dynamique : Utiliser un dégradé animé dans les connecteurs entre chaque étape pour plus de fluidité.
 about us elastic line fancy component
 
-1 mettre photo dans company -> en team
-
 roadmap key point a def
+
+fix template blog
+
+add sphinx lib
