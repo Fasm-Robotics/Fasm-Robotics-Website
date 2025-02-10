@@ -1,43 +1,68 @@
 [
-    {
-      "id": "1",
-      "title": "Exploring the Future of Robotics",
-      "image": "/images/1.jpg",
-      "description": "This article delves into how robotics is shaping the future...",
-      "content": "This is the detailed content about robotics shaping the future.",
-      "date": "2025-01-28"
-    },
-    {
-      "id": "2",
-      "title": "AI and Machine Learning Trends",
-      "image": "/images/2.jpg",
-      "description": "Discover the latest trends in AI and machine learning...",
-      "content": "Detailed content about AI and Machine Learning Trends.",
-      "date": "2025-01-28"
-    },
-    {
-        "id": "3",
-        "title": "Exploring the Future of Robotics",
-        "image": "/images/1.jpg",
-        "description": "This article delves into how robotics is shaping the future...",
-        "content": "This is the detailed content about robotics shaping the future.",
-        "date": "2025-01-28"
-      },
+  {
+    "id": "1",
+    "title": "Exploring the Future of Robotics",
+    "image": "/images/3.jpg",
+    "date": "2025-02-08",
+    "content": [
+      "This is the first paragraph of the article.",
       {
-        "id": "4",
-        "title": "ouep the Future of Robotics",
-        "image": "/images/1.jpg",
-        "description": "This article delves into how robotics is shaping the future...",
-        "content": "This is the detailed content about robotics shaping the future.",
-        "date": "2025-01-28"
+        "type": "image",
+        "src": "/images/untitled.png",
+        "alt": "A futuristic robot"
       },
+      "This is another paragraph after the image."
+    ]
+  },  
+  {
+    "id": "2",
+    "title": "Exploring the Futureeof Robotics",
+    "image": "/images/3.jpg",
+    "date": "2025-02-08",
+    "content": [
+      "This is the first paragraph of the article.",
+      "This is another paragraph after the image."
+    ]
+  },  
+  {
+    "id": "3",
+    "title": "Exploring the Futuree of Robotics test",
+    "image": "/images/3.jpg",
+    "date": "2025-02-08",
+    "content": [
+      "This is the first paragraph of the article.",
+      "This is another paragraph after the image."
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Exploring the Futurz of Robotics test2",
+    "image": "/images/3.jpg",
+    "date": "2025-02-08",
+    "content": [
+      "This is the first paragraph of the article.",
       {
-        "id": "5",
-        "title": "cococ the Future of Robotics",
-        "image": "/images/1.jpg",
-        "description": "This article delves into how robotics is shaping the future...",
-        "content": "This is the detailed content about robotics shaping the future.",
-        "date": "2025-01-28"
+        "type": "image",
+        "src": "/images/untitled.png",
+        "alt": "A futuristic robot"
+      },
+      "This is another paragraph after the image.",
+      {
+        "type": "image",
+        "src": "/images/untitled.png",
+        "alt": "A futuristic robot"
       }
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Exploring the Futurz of Robotic1",
+    "image": "/images/3.jpg",
+    "date": "2025-02-08",
+    "content": [
+      "This is the first paragraph of the article.",
+      "This is another paragraph after the image."
+    ]
+  }
   ]
   

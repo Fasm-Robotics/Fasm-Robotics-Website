@@ -149,11 +149,11 @@ function ArmAvailablePage() {
       </GradientSection>
       <GridSection />
       <LastUpdates />
-      <LinearCard
+      {/*<LinearCard
         title="FASM Robotic Arm"
         description="The FASM Robotic Arm is a state-of-the-art robotic arm designed to replicate and automate the most precise and repetitive tasks, bringing convenience and innovation to your daily life."
         url={piano}
-      />
+      />*/}
     </>
   );
 }

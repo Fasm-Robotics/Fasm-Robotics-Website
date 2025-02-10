@@ -47,6 +47,14 @@ const ArticleContent = styled.div`
   color: #e0e0e0;
 `;
 
+const BlogImage = styled.img`
+  width: 100%;
+  max-width: 600px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+`;
+
 const BackButton = styled(Link)`
   display: flex;
   align-items: center;
@@ -81,7 +89,29 @@ function BlogPostPage() {
       <ArticleTitle>{article.title}</ArticleTitle>
       <ArticleImage src={article.image} alt={article.title} />
       <ArticleDate>{article.date}</ArticleDate>
-      <ArticleContent>{article.content}</ArticleContent>
+      
+      <ArticleContent>
+  {article.content.map((block, index) => {
+    if (typeof block === 'string') {
+      // Cas où c'est un texte normal
+      return <p key={index}>{block}</p>;
+    } else if (block.type === 'image') {
+      // 🔍 Vérifier si l'URL de l'image est correcte
+      console.log("Image path:", block.src);
+
+      return (
+        <BlogImage
+          key={index}
+          src={`${process.env.PUBLIC_URL}${block.src}`} // 🔥 Force le bon chemin
+          alt={block.alt || "Blog image"}
+        />
+      );
+    }
+    return null;
+  })}
+</ArticleContent>
+
+
       <BackButton to="/blog">
         <ShinyText text="← Back to Blog" speed={3} />
       </BackButton>
