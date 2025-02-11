@@ -130,17 +130,9 @@ function ResponsiveHeader() {
           <NavLink to="/arm-available">Arm</NavLink>
           <NavLink to="/roadmap">Roadmap</NavLink>
           <NavLink to="/blog">Blog</NavLink>
-          <DropdownContainer>
-            <DropdownButton>Documentation</DropdownButton>
-            <DropdownMenu>
-              <li>
-                <Link to="/documentation/arm">Bras Robotique</Link>
-              </li>
-              <li>
-                <Link to="/documentation/interface">Interface Graphique</Link>
-              </li>
-            </DropdownMenu>
-          </DropdownContainer>
+          <NavLink to="/docs/index.html" target="_blank" rel="noopener noreferrer">
+            Documentation
+          </NavLink>
         </Nav>
       </ContentWrapper>
       <GitHubButtonWrapper>
