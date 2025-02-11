@@ -3,6 +3,12 @@ import styled from 'styled-components';
 import PixelTransition from './PixelTransition';
 import team3 from '../assets/team3.jpg';
 
+// Ajout des vraies images des membres de l'équipe
+import member1 from '../assets/team/ari.jpg';
+import member2 from '../assets/team/moh.jpg';
+import member3 from '../assets/team/sabri.jpg';
+import member4 from '../assets/team/flav1.jpg';
+
 const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -18,19 +24,6 @@ const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-const PlaceholderImage = styled.div`
-  width: 100%;
-  height: 400px;
-  background: #444;
-  border-radius: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #aaa;
-  font-size: 1.5rem;
-  text-align: center;
 `;
 
 const Section = styled.div`
@@ -78,6 +71,13 @@ const CardsContainer = styled.div`
   flex-wrap: wrap;
 `;
 
+const teamMembers = [
+  { name: 'Aristide', image: member1 },
+  { name: 'Mohsine', image: member2 },
+  { name: 'Sabri', image: member3 },
+  { name: 'Flavien', image: member4 },
+];
+
 function CompanyPage() {
   return (
     <PageContainer style={{ marginTop: '-3rem' }}>
@@ -85,8 +85,9 @@ function CompanyPage() {
         <div>
           <Title>Who are we?</Title>
           <Description>
-            We are a team of robotics enthusiasts dedicated to creating cutting-edge solutions
-            that make a difference in people's lives. Our mission is to innovate and inspire.
+          We are a team of Epitech students passionate about robotics and innovation. For our final year project, we decided to develop an open-source, low-cost robotic arm designed to be accessible to everyone, from hobbyists to researchers.
+          <br /><br />
+          Our goal is to democratize robotics by providing a powerful yet affordable tool that encourages learning, experimentation, and real-world applications. We believe that technology should be open and collaborative, and we are committed to sharing our progress with the community.
           </Description>
         </div>
         <ImageContainer>
@@ -96,8 +97,8 @@ function CompanyPage() {
             style={{
               width: '100%', 
               height: '100%', 
-              objectFit: 'cover', // Pour ajuster l'image
-              borderRadius: '10px', // Coins arrondis
+              objectFit: 'cover',
+              borderRadius: '10px',
             }}
           />
         </ImageContainer>
@@ -106,13 +107,13 @@ function CompanyPage() {
       <TeamSection>
         <TeamTitle>Meet Our Team</TeamTitle>
         <CardsContainer>
-          {[...Array(4)].map((_, index) => (
+          {teamMembers.map((member, index) => (
             <PixelTransition
               key={index}
               firstContent={
                 <img
-                  src={`https://via.placeholder.com/300x300?text=Member+${index + 1}`}
-                  alt={`Team Member ${index + 1}`}
+                  src={member.image}
+                  alt={member.name}
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               }
@@ -133,7 +134,7 @@ function CompanyPage() {
                       color: '#ffffff',
                     }}
                   >
-                    Member {index + 1}
+                    {member.name}
                   </p>
                 </div>
               }

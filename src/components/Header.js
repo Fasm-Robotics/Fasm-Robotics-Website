@@ -148,7 +148,7 @@ function ResponsiveHeader() {
                 Home
               </NavLink>
               <NavLink to="/company" onClick={() => setIsOpen(false)}>
-                Company
+                Team
               </NavLink>
               <NavLink to="/arm-available" onClick={() => setIsOpen(false)}>
                 Arm
