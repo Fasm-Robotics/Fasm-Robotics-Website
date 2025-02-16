@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CheckCircle, Settings, ShoppingBag, CreditCard, TrendingUp } from 'lucide-react';
+import { CheckCircle, Settings, ShoppingBag, Wrench, Link, Code, RotateCw, Layers, Package } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const RoadmapContainer = styled.div`
@@ -76,6 +76,13 @@ const StepContent = styled.div`
 const StepTitle = styled.h3`
   font-size: 1.5rem;
   font-weight: bold;
+  margin-bottom: 5px;
+`;
+
+const StepDate = styled.p`
+  font-size: 1rem;
+  font-style: italic;
+  color: #b0b0b0;
   margin-bottom: 10px;
 `;
 
@@ -88,44 +95,46 @@ const StepDescription = styled.p`
 function Roadmap() {
   const steps = [
     {
-      icon: <ShoppingBag size={24} />,
-      title: 'Step 1: Research Products',
-      description: 'Identify trending products that have high demand and low competition.',
+      icon: <Package size={24} />,
+      title: 'Step 1: First prototype and technology selection',
+      date: 'September 2024',
+      description: 'Define project requirements and select the most suitable technologies.',
     },
     {
       icon: <Settings size={24} />,
-      title: 'Step 2: Set Up the Store',
-      description: 'Register and customize your online store with user-friendly tools.',
+      title: 'Step 2: First 3D modeling',
+      date: 'October 2024',
+      description: 'Design the initial 3D model of the robotic arm to validate the structure.',
     },
     {
-      icon: <CreditCard size={24} />,
-      title: 'Step 3: Payment Integration',
-      description: 'Integrate secure payment methods to ensure smooth transactions.',
+      icon: <RotateCw size={24} />,
+      title: 'Step 3: Development of shoulder motors',
+      date: 'November 2024',
+      description: 'Develop and test shoulder motors to ensure proper rotation and stability.',
     },
     {
-      icon: <TrendingUp size={24} />,
-      title: 'Step 4: Launch Marketing Campaign',
-      description: 'Create ad campaigns to reach your target audience and drive sales.',
+      icon: <Wrench size={24} />,
+      title: 'Step 4: Learning assembly techniques',
+      date: 'November 2024 - December 2024',
+      description: 'Study and test different assembly techniques for mechanical components.',
     },
     {
-      icon: <CheckCircle size={24} />,
-      title: 'Step 5: Optimize and Scale',
-      description: 'Analyze performance data to optimize and scale your business.',
+      icon: <Layers size={24} />,
+      title: 'Step 5: Shoulder motor assembly',
+      date: 'December 2024 - January 2025',
+      description: 'Integrate the shoulder motors into the structure and validate initial movements.',
     },
     {
-      icon: <CheckCircle size={24} />,
-      title: 'Step 6: Optimize and Scale',
-      description: 'Analyze performance data to optimize and scale your business.',
+      icon: <Link size={24} />,
+      title: 'Step 6: Arm connection',
+      date: 'January 2025',
+      description: 'Connect and synchronize all robotic arm joints for fluid movement.',
     },
     {
-      icon: <CheckCircle size={24} />,
-      title: 'Step 7: Optimize and Scale',
-      description: 'Analyze performance data to optimize and scale your business.',
-    },
-    {
-      icon: <CheckCircle size={24} />,
-      title: 'Step 8: Optimize and Scale',
-      description: 'Analyze performance data to optimize and scale your business.',
+      icon: <Code size={24} />,
+      title: 'Step 7: First software tests',
+      date: 'February 2025',
+      description: 'Deploy and test initial control algorithms for robotic movement.',
     },
   ];
 
@@ -145,6 +154,7 @@ function Roadmap() {
             <IconContainer>{step.icon}</IconContainer>
             <StepContent>
               <StepTitle>{step.title}</StepTitle>
+              <StepDate>{step.date}</StepDate>
               <StepDescription>{step.description}</StepDescription>
             </StepContent>
           </Step>
