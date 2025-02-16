@@ -10,10 +10,12 @@ import RoadMap from './components/RoadMap';
 import BlogPage from './components/BlogPage';
 import BlogPostPage from './components/BlogPostPage';
 import DocumentationPage from './components/DocumentationPage';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
