@@ -1,7 +1,5 @@
-/* Importation d'une police moderne */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
 
-/* Global */
 body {
     font-family: 'Inter', sans-serif;
     background: #f8f9fa;
@@ -11,7 +9,6 @@ body {
     padding: 0;
 }
 
-/* Sidebar Navigation */
 .wy-nav-side {
     background: #2c3e50;
     border-right: 2px solid #34495e;
@@ -21,7 +18,6 @@ body {
     padding: 20px;
 }
 
-/* Titre de la documentation */
 h1, h2, h3, h4 {
     font-weight: 700;
     color: #212529;
@@ -29,7 +25,6 @@ h1, h2, h3, h4 {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Liens et navigation */
 a {
     color: #007bff;
     text-decoration: none;
@@ -40,7 +35,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Contenu principal */
 .wy-nav-content {
     background: #ffffff;
     padding: 30px;
@@ -57,7 +51,6 @@ a:hover {
     border-left: 4px solid #007bff;
 }
 
-/* Tableau de contenu */
 .wy-menu-vertical a {
     padding: 10px 15px;
     border-radius: 5px;
@@ -67,7 +60,6 @@ a:hover {
     background: #e9ecef;
 }
 
-/* Barre de recherche */
 .wy-nav-search input {
     background: #ffffff;
     color: #343a40;
@@ -76,7 +68,6 @@ a:hover {
     padding: 8px;
 }
 
-/* Pied de page */
 .footer {
     text-align: center;
     padding: 15px;
