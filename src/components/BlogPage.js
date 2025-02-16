@@ -126,7 +126,7 @@ function BlogPage() {
       <BlogContainer>
         {articles.slice(0, visibleCount).map((article) => (
           <BlogCard key={article.id}>
-            <BlogImage src={article.image} alt={article.title} />
+            <BlogImage src={article.coverImage} alt={article.title} />
             <BlogTitle>{article.title}</BlogTitle>
             <BlogDate>{article.date}</BlogDate>
             <BlogDescription>{article.description}</BlogDescription>

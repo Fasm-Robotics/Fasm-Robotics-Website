@@ -1,19 +1,36 @@
 [
-  {
-    "id": "1",
-    "title": "Exploring the Future of Robotics",
-    "image": "/images/3.jpg",
-    "date": "2025-02-08",
-    "content": [
-      "This is the first paragraph of the article.",
+    {
+      "id": "1",
+      "title": "Naissance d’un Projet : Plongée dans la Robotique avec Arduino",
+      "date": "2025-02-16",
+      "coverImage": "/images/arduino_post/arduino_cover.png",
+      "intro": "En septembre 2024, nous avons décidé de nous lancer dans un projet ambitieux : construire un bras robotique humanoïde. Ce premier article est dédié aux débuts de notre aventure.",
+      "content": [
+        {
+          "type": "section",
+          "title": "Premiers Pas dans la Robotique : Découverte d’Arduino",
+          "content": "Comme beaucoup de débutants, notre première approche a été de nous immerger dans des heures de vidéos YouTube. Nous avons regardé des créateurs passionnés expliquer comment contrôler des moteurs, utiliser des capteurs et coder sur Arduino. Très vite, une chose était claire : pour comprendre la robotique, il fallait expérimenter. L'Arduino est une carte électronique programmable qui permet de contrôler des composants comme des moteurs, des LEDs et des capteurs. Il en existe plusieurs modèles, et nous avons opté pour l’Arduino Mega, qui offre plus d’entrées et de sorties que l’Arduino Uno, ce qui nous laissait plus de liberté pour la suite.",
+          "image": "/images/arduino_post/3_arduino.png"
+        },
       {
-        "type": "image",
-        "src": "/images/untitled.png",
-        "alt": "A futuristic robot"
+        "type": "section",
+        "title": "Premier Matériel : Commander et Tester des Servomoteurs",
+        "content": "Une fois l’Arduino en main, nous avons voulu le tester avec des moteurs, et plus particulièrement des servomoteurs. Mais qu’est-ce qu’un servomoteur ? Un servomoteur est un type de moteur qui permet un contrôle précis de sa position. Contrairement aux moteurs classiques qui tournent indéfiniment, un servo peut être commandé pour s’arrêter à un angle précis, ce qui est parfait pour un bras robotique. En général, ils fonctionnent avec trois fils : Rouge : alimentation (souvent 5V ou 6V) Noir/Marron : masse Jaune/Blanc : signal (permet de contrôler la position du moteur) Nous avons reçu nos premiers servos, de petits SG90 et MG996R, parfaits pour débuter. Avec notre Arduino Mega et quelques câbles, nous avons écrit notre premier programme pour les faire bouger.",
+        "image": "/images/arduino_post/1_arduino.png"
+      }, 
+      {
+        "type": "section",
+        "title": "Nos Premiers Tests : Faire Bouger un Moteur",
+        "content": "Nous avons rapidement réalisé que la robotique, ce n’était pas juste du matériel. Le code est essentiel pour contrôler les composants électroniques. Grâce aux bibliothèques Arduino comme Servo.h, nous avons pu écrire un programme simple pour tester nos moteurs. Ce petit test nous a donné un sentiment de satisfaction immense. Voir un moteur bouger grâce à quelques lignes de code était une expérience motivante.",
+        "image": "/images/arduino_post/2_arduino.png"      
       },
-      "This is another paragraph after the image."
+      {
+        "type": "section",
+        "title": "Conclusion : Les Premiers Pas Réussis !",
+        "content": "Ces premières semaines ont été essentielles dans notre apprentissage. Nous avons découvert : Ce qu’est Arduino et comment l’utiliser Comment fonctionne un servomoteur et comment le contrôler Les bases du codage et des montages électroniquesCe fut un premier contact passionnant avec la robotique, et il nous a donné envie d’aller encore plus loin. Dans le prochain article, nous parlerons de nos premiers essais avec des moteurs plus puissants et la conception des premières pièces du bras robotique. Restez connectés pour la suite de l’aventure ! 🚀 "
+      }
     ]
-  },  
+  },   
   {
     "id": "2",
     "title": "Exploring the Futureeof Robotics",
@@ -23,42 +40,12 @@
       "This is the first paragraph of the article.",
       "This is another paragraph after the image."
     ]
-  },  
+  },
   {
     "id": "3",
-    "title": "Exploring the Futuree of Robotics test",
-    "image": "/images/3.jpg",
-    "date": "2025-02-08",
-    "content": [
-      "This is the first paragraph of the article.",
-      "This is another paragraph after the image."
-    ]
-  },
-  {
-    "id": "4",
-    "title": "Exploring the Futurz of Robotics test2",
-    "image": "/images/3.jpg",
-    "date": "2025-02-08",
-    "content": [
-      "This is the first paragraph of the article.",
-      {
-        "type": "image",
-        "src": "/images/untitled.png",
-        "alt": "A futuristic robot"
-      },
-      "This is another paragraph after the image.",
-      {
-        "type": "image",
-        "src": "/images/untitled.png",
-        "alt": "A futuristic robot"
-      }
-    ]
-  },
-  {
-    "id": "5",
-    "title": "Exploring the Futurz of Robotic1",
-    "image": "/images/3.jpg",
-    "date": "2025-02-08",
+    "title": "The Rise of Artificial Intelligence",
+    "image": "/images/2.jpg",
+    "date": "2025-01-15",
     "content": [
       "This is the first paragraph of the article.",
       "This is another paragraph after the image."

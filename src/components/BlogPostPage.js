@@ -22,19 +22,19 @@ const ArticleTitle = styled.h1`
   margin-bottom: 20px;
 `;
 
+const ArticleDate = styled.p`
+  font-size: 1rem;
+  color: #ccc;
+  text-align: center;
+  margin-bottom: 20px;
+`;
+
 const ArticleImage = styled.img`
   width: 100%;
   max-width: 800px;
   max-height: 500px;
   object-fit: cover;
   border-radius: 10px;
-  margin-bottom: 20px;
-`;
-
-const ArticleDate = styled.p`
-  font-size: 1rem;
-  color: #ccc;
-  text-align: center;
   margin-bottom: 20px;
 `;
 
@@ -47,9 +47,26 @@ const ArticleContent = styled.div`
   color: #e0e0e0;
 `;
 
+const SectionTitle = styled.h2`
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 30px;
+`;
+
+const SectionDivider = styled.hr`
+  width: 100%;
+  max-width: 800px;
+  border: none;
+  height: 2px;
+  background: #555;
+  margin: 30px 0;
+`;
+
 const BlogImage = styled.img`
   width: 100%;
   max-width: 600px;
+  max-height: 400px;
+  object-fit: contain;
   margin: 20px 0;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -87,29 +104,49 @@ function BlogPostPage() {
   return (
     <ArticleContainer style={{ marginTop: '-3rem' }}>
       <ArticleTitle>{article.title}</ArticleTitle>
-      <ArticleImage src={article.image} alt={article.title} />
       <ArticleDate>{article.date}</ArticleDate>
-      
-      <ArticleContent>
-  {article.content.map((block, index) => {
-    if (typeof block === 'string') {
-      // normal text
-      return <p key={index}>{block}</p>;
-    } else if (block.type === 'image') {
-      // look if its the good url
-      console.log("Image path:", block.src);
 
-      return (
-        <BlogImage
-          key={index}
-          src={`${process.env.PUBLIC_URL}${block.src}`} // get public url
-          alt={block.alt || "Blog image"}
-        />
-      );
-    }
-    return null;
-  })}
-</ArticleContent>
+      {/* Affichage de l'introduction si elle existe */}
+      {article.intro && (
+        <ArticleContent>
+          <p>{article.intro}</p>
+        </ArticleContent>
+      )}
+
+      <SectionDivider />
+
+      <ArticleContent>
+        {article.content.map((block, index) => {
+          if (typeof block === 'string') {
+            return <p key={index}>{block}</p>;
+          } else if (block.type === 'image') {
+            console.log("Image path:", block.src);
+            return (
+              <BlogImage
+                key={index}
+                src={`${process.env.PUBLIC_URL}${block.src}`}
+                alt={block.alt || "Blog image"}
+              />
+            );
+          } else if (block.type === 'section') {
+            return (
+              <div key={index}>
+                <SectionTitle>{block.title}</SectionTitle>
+                <p>{block.content}</p>
+                {block.image && (
+                  <BlogImage
+                    src={`${process.env.PUBLIC_URL}${block.image}`}
+                    alt={block.title || "Section image"}
+                  />
+                )}
+                <SectionDivider />
+              </div>
+            );
+          }
+          return null;
+        })}
+      </ArticleContent>
+
       <BackButton to="/blog">
         <ShinyText text="← Back to Blog" speed={3} />
       </BackButton>
