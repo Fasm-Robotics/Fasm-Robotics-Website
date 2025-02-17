@@ -1,0 +1,80 @@
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 2%;
+  }
+  
+  .slider-container {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .slider {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .slider-content {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: white;
+    padding: 20px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  }
+  
+  .slider-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .slider-description {
+    font-size: 16px;
+  }
+  
+  .slider-nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+  }
+  
+  .slider-nav-button.prev {
+    left: 10px;
+  }
+  
+  .slider-nav-button.next {
+    right: 10px;
+  }
+  
+  .slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .slider-dot {
+    width: 10px;
+    height: 10px;
+    background: gray;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .slider-dot.active {
+    background: black;
+  }
+  

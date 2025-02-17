@@ -1,16 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import HomePage from './components/HomePage';
-import CompanyPage from './components/CompanyPage';
-import Footer from './components/Footer';
+import Header from './components/Utils/Header';
+import HomePage from './components/HomePage/HomePage';
+import CompanyPage from './components/Team/CompanyPage';
+import Footer from './components/Utils/Footer';
 import JoinCommunityPage from './components/JoinCommunityPage';
-import ArmAvailablePage from './components/ArmAvailablePage';
-import RoadMap from './components/RoadMap';
-import BlogPage from './components/BlogPage';
-import BlogPostPage from './components/BlogPostPage';
-import DocumentationPage from './components/DocumentationPage';
-import ScrollToTop from './components/ScrollToTop';
+import ArmAvailablePage from './components/ArmPage/ArmAvailablePage';
+import RoadMap from './components/RoadMap/RoadMap';
+import BlogPage from './components//Blog/BlogPage';
+import BlogPostPage from './components/Blog/BlogPostPage';
+import DocumentationPage from './components/Documentation/DocumentationPage';
+import ScrollToTop from './components/Animations/ScrollToTop';
 
 function App() {
   return (
