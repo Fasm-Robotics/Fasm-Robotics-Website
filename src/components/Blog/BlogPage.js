@@ -82,10 +82,14 @@ const ReadMoreLink = styled(Link)`
 `;
 
 const PageTitle = styled.h1`
-  font-size: 2.5rem;
+  font-size: 3rem;
+  font-weight: bold;
   color: white;
   text-align: center;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
+  margin-top: 20px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+
 `;
 
 const LoadMoreButton = styled.button`

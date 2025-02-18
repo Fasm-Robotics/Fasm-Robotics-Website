@@ -19,7 +19,8 @@ const ArticleTitle = styled.h1`
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  margin-top: 50px;
 `;
 
 const ArticleDate = styled.p`

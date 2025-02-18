@@ -30,26 +30,6 @@
         "content": "Ces premières semaines ont été essentielles dans notre apprentissage. Nous avons découvert : Ce qu’est Arduino et comment l’utiliser Comment fonctionne un servomoteur et comment le contrôler Les bases du codage et des montages électroniquesCe fut un premier contact passionnant avec la robotique, et il nous a donné envie d’aller encore plus loin. Dans le prochain article, nous parlerons de nos premiers essais avec des moteurs plus puissants et la conception des premières pièces du bras robotique. Restez connectés pour la suite de l’aventure ! 🚀 "
       }
     ]
-  },   
-  {
-    "id": "2",
-    "title": "Exploring the Futureeof Robotics",
-    "image": "/images/3.jpg",
-    "date": "2025-02-08",
-    "content": [
-      "This is the first paragraph of the article.",
-      "This is another paragraph after the image."
-    ]
-  },
-  {
-    "id": "3",
-    "title": "The Rise of Artificial Intelligence",
-    "image": "/images/2.jpg",
-    "date": "2025-01-15",
-    "content": [
-      "This is the first paragraph of the article.",
-      "This is another paragraph after the image."
-    ]
   }
   ]
   
