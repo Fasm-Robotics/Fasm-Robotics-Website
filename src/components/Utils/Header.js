@@ -156,6 +156,9 @@ function ResponsiveHeader() {
               <NavLink to="/roadmap" onClick={() => setIsOpen(false)}>
                 Roadmap
               </NavLink>
+              <NavLink to="/blog" onClick={() => setIsOpen(false)}>
+                Blog
+              </NavLink>
               <DropdownContainer>
                 <DropdownButton onClick={() => setIsOpen(!isOpen)}>
                   Documentation
