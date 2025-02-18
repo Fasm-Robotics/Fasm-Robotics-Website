@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import PixelTransition from './PixelTransition';
 import team3 from '../../assets/team/team3.jpg';
-
-// Ajout des vraies images des membres de l'équipe
 import member1 from '../../assets/team/ari.jpg';
 import member2 from '../../assets/team/moh.jpg';
 import member3 from '../../assets/team/sabri.jpg';
@@ -18,21 +16,19 @@ const PageContainer = styled.div`
   color: white;
 `;
 
-const ImageContainer = styled.div`
-  flex: 1;
-  max-width: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
 const Section = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70vh;
+  height: auto;
   padding: 20px;
   gap: 30px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
 `;
 
 const Title = styled.h1`
@@ -46,11 +42,29 @@ const Description = styled.p`
   line-height: 1.6;
 `;
 
+const ImageContainer = styled.div`
+  flex: 1;
+  max-width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    max-width: 80%; 
+    width: 100%;
+  }
+`;
+
 const Image = styled.img`
-  width: 50%;
+  width: 100%;
   height: auto;
   border-radius: 15px;
   object-fit: cover;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 400px;
+  }
 `;
 
 const TeamSection = styled.div`
@@ -85,22 +99,13 @@ function CompanyPage() {
         <div>
           <Title>Who are we?</Title>
           <Description>
-          We are a team of Epitech students passionate about robotics and innovation. For our final year project, we decided to develop an open-source, low-cost robotic arm designed to be accessible to everyone, from hobbyists to researchers.
-          <br /><br />
-          Our goal is to democratize robotics by providing a powerful yet affordable tool that encourages learning, experimentation, and real-world applications. We believe that technology should be open and collaborative, and we are committed to sharing our progress with the community.
+            We are a team of Epitech students passionate about robotics and innovation. For our final year project, we decided to develop an open-source, low-cost robotic arm designed to be accessible to everyone, from hobbyists to researchers.
+            <br /><br />
+            Our goal is to democratize robotics by providing a powerful yet affordable tool that encourages learning, experimentation, and real-world applications. We believe that technology should be open and collaborative, and we are committed to sharing our progress with the community.
           </Description>
         </div>
         <ImageContainer>
-          <img
-            src={team3}
-            alt="Description de l'image"
-            style={{
-              width: '100%', 
-              height: '100%', 
-              objectFit: 'cover',
-              borderRadius: '10px',
-            }}
-          />
+          <Image src={team3} alt="Our team" />
         </ImageContainer>
       </Section>
 
