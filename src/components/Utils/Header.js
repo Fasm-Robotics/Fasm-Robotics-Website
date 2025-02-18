@@ -49,51 +49,6 @@ const NavLink = styled(Link)`
   }
 `;
 
-const DropdownContainer = styled.div`
-  position: relative;
-
-  &:hover ul {
-    display: block;
-  }
-`;
-
-const DropdownButton = styled.div`
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-
-  &:hover {
-    color: gray;
-  }
-`;
-
-const DropdownMenu = styled.ul`
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #333;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  list-style: none;
-
-  li {
-    margin: 5px 0;
-  }
-
-  a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-
-    &:hover {
-      color: gray;
-    }
-  }
-`;
-
 const MenuButton = styled.button`
   background: none;
   border: none;
