@@ -159,23 +159,9 @@ function ResponsiveHeader() {
               <NavLink to="/blog" onClick={() => setIsOpen(false)}>
                 Blog
               </NavLink>
-              <DropdownContainer>
-                <DropdownButton onClick={() => setIsOpen(!isOpen)}>
-                  Documentation
-                </DropdownButton>
-                <DropdownMenu>
-                  <li>
-                    <NavLink to="/documentation/arm" onClick={() => setIsOpen(false)}>
-                      Bras Robotique
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/documentation/interface" onClick={() => setIsOpen(false)}>
-                      Interface Graphique
-                    </NavLink>
-                  </li>
-                </DropdownMenu>
-              </DropdownContainer>
+              <NavLink to="/docs/index.html" target="_blank" rel="noopener noreferrer">
+                Documentation
+              </NavLink>
             </nav>
           </Drawer.Content>
         </Drawer.Portal>
