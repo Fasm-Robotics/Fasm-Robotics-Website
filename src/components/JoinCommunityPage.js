@@ -62,7 +62,7 @@ const VideoContainer = styled.video`
 
 function JoinCommunityPage() {
   return (
-    <PageContainer>
+    <PageContainer style={{ marginTop: '-3rem' }}>
       <LeftSection>
         <video
           autoPlay
