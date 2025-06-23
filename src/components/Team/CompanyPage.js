@@ -5,7 +5,7 @@ import team3 from '../../assets/team/team3.jpg';
 import member1 from '../../assets/team/ari.jpg';
 import member2 from '../../assets/team/moh.jpg';
 import member3 from '../../assets/team/sabri.jpg';
-import member4 from '../../assets/team/flav1.jpg';
+import member4 from '../../assets/team/flav_le_bg.jpeg';
 
 const PageContainer = styled.div`
   display: flex;
