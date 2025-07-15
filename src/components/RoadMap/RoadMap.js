@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CheckCircle, Settings, ShoppingBag, Wrench, Link, Code, RotateCw, Layers, Package } from 'lucide-react';
+import { CheckCircle, Settings, Wrench, Link, Code, RotateCw, Layers, Package, Server, Terminal } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const RoadmapContainer = styled.div`
@@ -135,6 +135,18 @@ function Roadmap() {
       title: 'Step 7: First software tests',
       date: 'February 2025',
       description: 'Deploy and test initial control algorithms for robotic movement.',
+    },
+    {
+      icon: <Server size={24} />,
+      title: 'Step 8: API development and connection to the software',
+      date: 'March 2025 - April 2025',
+      description: 'Design and implementation of an API to enable communication between the robotic arm and the control software.',
+    },
+    {
+      icon: <Terminal size={24} />,
+      title: 'Step 9: Alpha version',
+      date: 'May 2025 - July 2025',
+      description: 'Final adjustments for the Alpha version',
     },
   ];
 

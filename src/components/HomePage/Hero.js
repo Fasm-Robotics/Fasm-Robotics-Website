@@ -107,12 +107,12 @@ function Hero() {
     <HeroSection style={{ marginTop: '-3rem' }}>
       <BackgroundVideo
         ref={videoRef}
-        onEnded={handleVideoEnd}
         autoPlay
         muted
+        loop
         playsInline
       >
-        <source src="/videos/bras1.mp4" type="video/mp4" />
+        <source src="/videos/test_main.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </BackgroundVideo>
 

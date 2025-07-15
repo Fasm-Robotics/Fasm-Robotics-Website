@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaLinkedin, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
 const FooterContainer = styled.footer`
   background-color: #111;
   color: white;
@@ -38,14 +38,8 @@ function Footer() {
     <FooterContainer>
       <FooterText>© 2025 FASM Company. All rights reserved.</FooterText>
       <SocialIcons>
-        <IconLink href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-          <FaLinkedin />
-        </IconLink>
-        <IconLink href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-          <FaTwitter />
-        </IconLink>
-        <IconLink href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-          <FaInstagram />
+        <IconLink href="https://youtube.com/@fasmrobotics?si=g6OUsNUc1zSb_URB" target="_blank" rel="noopener noreferrer">
+          <FaYoutube />
         </IconLink>
       </SocialIcons>
       <FooterText>Email: contact@fasmrobotics.com</FooterText>

@@ -84,7 +84,6 @@ function ResponsiveHeader() {
           <NavLink to="/company">Team</NavLink>
           <NavLink to="/arm-available">Arm</NavLink>
           <NavLink to="/roadmap">Roadmap</NavLink>
-          <NavLink to="/blog">Blog</NavLink>
           <NavLink to="/docs/index.html" target="_blank" rel="noopener noreferrer">
             Documentation
           </NavLink>
@@ -110,9 +109,6 @@ function ResponsiveHeader() {
               </NavLink>
               <NavLink to="/roadmap" onClick={() => setIsOpen(false)}>
                 Roadmap
-              </NavLink>
-              <NavLink to="/blog" onClick={() => setIsOpen(false)}>
-                Blog
               </NavLink>
               <NavLink to="/docs/index.html" target="_blank" rel="noopener noreferrer">
                 Documentation

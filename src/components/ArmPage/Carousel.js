@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './Carousel.css'; // Assurez-vous que le fichier CSS lié est bien importé
+import './Carousel.css';
 
 const Carousel = ({ slides }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Défilement automatique toutes les 5 secondes
+  // 5s Interval auto slide
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
@@ -12,7 +12,7 @@ const Carousel = ({ slides }) => {
       );
     }, 5000);
 
-    // Nettoie l'intervalle lors du démontage du composant
+    // clear interval
     return () => clearInterval(interval);
   }, [slides.length]);
 
