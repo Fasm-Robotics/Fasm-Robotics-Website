@@ -144,9 +144,9 @@ function Roadmap() {
     },
     {
       icon: <Terminal size={24} />,
-      title: 'Step 9: Wait the last title',
+      title: 'Step 9: Alpha version',
       date: 'May 2025 - July 2025',
-      description: 'Final adjustments for the Beta version',
+      description: 'Final adjustments for the Alpha version',
     },
   ];
 

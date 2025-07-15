@@ -7,17 +7,17 @@ import banc from '../../assets/arm/banc.jpg';
 const slides = [
   {
     image: main,
-    title: 'New Update',
+    title: 'July Update',
     description: 'We linked the shoulder to forarms',
   },
   {
     image: poing,
-    title: 'New Update',
+    title: 'June Update',
     description: 'We linked the Shoulder to the software',
   },
   {
     image: banc,
-    title: 'New Update',
+    title: 'May Update',
     description: 'The software is now able to control the arm',
   },
 ];
