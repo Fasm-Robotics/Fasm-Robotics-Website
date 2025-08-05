@@ -13,6 +13,8 @@ Welcome to FASM Robotics's documentation!
    getting_started
    installation
    usage
+   api
+   lib
 
 
 Indices and tables

@@ -40,7 +40,3 @@ If you encounter issues:
       python app.py
 
 - Consult the :doc:`getting_started` and :doc:`installation` guides.
-
----
-
-Tu peux maintenant les ajouter dans ton dossier **docs/** et les inclure dans `index.rst` ! 🚀

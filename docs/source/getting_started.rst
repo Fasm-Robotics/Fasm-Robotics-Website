@@ -27,4 +27,3 @@ Next Steps:
 ^^^^^^^^^^^
 - Read the :doc:`installation` guide.
 - Learn how to use the system in the :doc:`usage` section.
-- djjcjdcjd

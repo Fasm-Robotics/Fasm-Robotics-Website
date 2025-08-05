@@ -1,87 +1,60 @@
-/* Importation d'une police moderne */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
-
-/* Global */
+/* Style général */
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: Arial, sans-serif;
     background: #f8f9fa;
-    color: #343a40;
+    color: #333;
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
 }
 
-/* Sidebar Navigation */
-.wy-nav-side {
-    background: #2c3e50;
-    border-right: 2px solid #34495e;
+/* En-têtes */
+h1, h2, h3 {
+    color: #2c3e50;
+    font-weight: bold;
 }
+
+/* Sidebar */
 .wy-side-nav-search {
-    background: #34495e;
-    padding: 20px;
-}
-
-/* Titre de la documentation */
-h1, h2, h3, h4 {
-    font-weight: 700;
-    color: #212529;
-    margin-bottom: 10px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-/* Liens et navigation */
-a {
-    color: #007bff;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-}
-a:hover {
-    color: #0056b3;
-    text-decoration: underline;
-}
-
-/* Contenu principal */
-.wy-nav-content {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 80%;
-}
-
-/* Boîte d'information */
-.admonition {
-    background: #f8f9fa;
-    padding: 15px;
-    border-radius: 8px;
-    border-left: 4px solid #007bff;
-}
-
-/* Tableau de contenu */
-.wy-menu-vertical a {
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-}
-.wy-menu-vertical a:hover {
-    background: #e9ecef;
-}
-
-/* Barre de recherche */
-.wy-nav-search input {
-    background: #ffffff;
-    color: #343a40;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    padding: 8px;
-}
-
-/* Pied de page */
-.footer {
-    text-align: center;
-    padding: 15px;
-    font-size: 0.9em;
     background: #2c3e50;
-    color: #ffffff;
-    border-top: 3px solid #030303;
+}
+
+.wy-nav-side {
+    background: #34495e;
+}
+
+.wy-menu-vertical a {
+    color: #ecf0f1;
+}
+
+.wy-menu-vertical a:hover {
+    background: #1abc9c;
+    color: white;
+}
+
+/* Contenu */
+.wy-nav-content {
+    max-width: 900px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Blocs d'information */
+.admonition {
+    border-left: 5px solid #1abc9c;
+    background: #ecf0f1;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.admonition.note {
+    border-left-color: #3498db;
+}
+
+.admonition.important {
+    border-left-color: #e67e22;
+}
+
+.admonition.warning {
+    border-left-color: #e74c3c;
 }
