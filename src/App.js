@@ -11,6 +11,7 @@ import BlogPage from './components//Blog/BlogPage';
 import BlogPostPage from './components/Blog/BlogPostPage';
 import DocumentationPage from './components/Documentation/DocumentationPage';
 import ScrollToTop from './components/Animations/ScrollToTop';
+import VirtualControllerPage from './components/VC/VirtualController';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:id" element={<BlogPostPage />} />
         <Route path="/documentation/:type" element={<DocumentationPage />} />
+        <Route path="/virtual-controller" element={<VirtualControllerPage />} />
       </Routes>
       <Footer />
     </Router>

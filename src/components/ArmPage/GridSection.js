@@ -1,13 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import TiltedCard from './TiltedCard';
-import salut from '../../assets/arm/salut.jpg';
-import piano from '../../assets/arm/piano.jpg';
-import doigt from '../../assets/arm/doigt.jpg';
-import banc from '../../assets/arm/banc.jpg';
 import test from '../../assets/arm/untitled3.png';
 import test2 from '../../assets/arm/untitled4.png';
-import test3 from '../../assets/arm/untitled2.png';
 import test4 from '../../assets/arm/untitled1.png';
 import test5 from '../../assets/arm/untitled.png';
 

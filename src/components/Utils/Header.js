@@ -84,6 +84,7 @@ function ResponsiveHeader() {
           <NavLink to="/company">Team</NavLink>
           <NavLink to="/arm-available">Arm</NavLink>
           <NavLink to="/roadmap">Roadmap</NavLink>
+          <NavLink to="/virtual-controller">VC3D</NavLink>
           <NavLink to="/docs/index.html" target="_blank" rel="noopener noreferrer">
             Documentation
           </NavLink>
@@ -109,6 +110,9 @@ function ResponsiveHeader() {
               </NavLink>
               <NavLink to="/roadmap" onClick={() => setIsOpen(false)}>
                 Roadmap
+              </NavLink>
+              <NavLink to="/virtual-controller" onClick={() => setIsOpen(false)}>
+                VC3D
               </NavLink>
               <NavLink to="/docs/index.html" target="_blank" rel="noopener noreferrer">
                 Documentation

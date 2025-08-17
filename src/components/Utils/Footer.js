@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FaLinkedin, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { FaYoutube } from 'react-icons/fa';
 const FooterContainer = styled.footer`
   background-color: #111;
   color: white;
