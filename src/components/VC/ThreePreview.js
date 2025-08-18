@@ -41,6 +41,29 @@ export default function ThreePreview({ angles }) {
       robot.position.set(0, 0, 0);
       scene.add(robot);
       robotRef.current = robot;
+      window.fasmRobot = robot;
+
+      robot.playResetAnimation = () => {
+      let t = 0;
+      const maxT = 10;
+      const originalPos = robot.position.clone();
+
+      const shake = () => {
+        if (!robot) return;
+
+        const offset = (t % 2 === 0 ? 1 : -1) * 0.01;
+        robot.position.x = originalPos.x + offset;
+        robot.position.y = originalPos.y + offset;
+
+        t++;
+        if (t < maxT) {
+          requestAnimationFrame(shake);
+        } else {
+          robot.position.copy(originalPos);
+        }
+      };
+      shake();
+      };
     });
 
     const animate = () => {
@@ -80,6 +103,7 @@ export default function ThreePreview({ angles }) {
         maxWidth: '900px',
         height: '500px',
         margin: '0 auto',
+        background : 'black',
         borderRadius: '12px',
         overflow: 'hidden',
         boxShadow: '0 0 20px rgba(0, 0, 0, 0.4)',

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
+import VCIntro from './VCIntro';
 import ThreePreview from "./ThreePreview";
 import ArmControlPanel from "./ArmControlPanel";
+import VCScrollIntro from './VCScrollIntro';
 
 export default function VirtualController() {
   const [angles, setAngles] = useState({
@@ -13,7 +15,7 @@ export default function VirtualController() {
     <>
       <style>{`
         .vc-container {
-          background-image: url('/images/robotic-bg.jpg');
+          background: radial-gradient(circle at center, #1e2a31, #0d1217);;
           background-size: cover;
           background-position: center;
           padding: 6rem 2rem;
@@ -83,20 +85,12 @@ export default function VirtualController() {
           border: 2px dashed #555;
         }
       `}</style>
-
-      <section className="vc-container">
-        <div className="vc-overlay"></div>
-        <div className="vc-content">
-          <h2 className="vc-title">Virtual Controller Simulator</h2>
-          <p className="vc-description">
-            The Virtual Controller is a real-time simulation tool designed to control the FASM robotic arm in a 3D environment.
-            It allows precise manipulation through XYZ coordinates and joint-specific commands.
-            This interface bridges the gap between the physical arm and digital control, enabling testing, prototyping, and debugging before real-world deployment.
-          </p>
+      <div style={{ backgroundColor: '#0a0a0a', padding: '4rem 0', marginTop: '-4rem'}}>
+          <VCIntro />
+          <VCScrollIntro />
           <ThreePreview angles={angles} />
           <ArmControlPanel angles={angles} setAngles={setAngles} />
-        </div>
-      </section>
+      </div>
     </>
   );
 }

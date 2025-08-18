@@ -6,10 +6,18 @@ export default function ArmControlPanel({ angles, setAngles }) {
       setAngles((prev) => ({ ...prev, [joint]: Number(value) }));
     };
 
-  const handleMove = () => {
-    console.log('Sending angles to backend:', angles);
-    // fetch('/api/move-arm', { method: 'POST', body: JSON.stringify(angles) })
-  };
+    const handleMove = () => {
+      console.log('Sending angles to backend:', angles);
+      // fetch('/api/move-arm', { method: 'POST', body: JSON.stringify(angles) })
+    };
+
+    const handleReset = () => {
+      setAngles({ SH1: 0, SH2: 0, SH3: 0, EL1: 0 });
+    
+      if (window.fasmRobot && window.fasmRobot.playResetAnimation) {
+        window.fasmRobot.playResetAnimation();
+      }
+    };
 
   return (
     <div className="arm-panel">
@@ -28,8 +36,7 @@ export default function ArmControlPanel({ angles, setAngles }) {
           <span className="angle-value">{angles[joint]}°</span>
         </div>
       ))}
-      <button className="move-btn" onClick={handleMove}>Move Arm</button>
-      <button className="reset-btn" onClick={() => setAngles({ SH1: 0, SH2: 0, SH3: 0, EL1: 0 })}>Reset Angles</button>
+      <button className="reset-btn" onClick={handleReset}>Reset Angles</button>
     </div>
   );
 }
