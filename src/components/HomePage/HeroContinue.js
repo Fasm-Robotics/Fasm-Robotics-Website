@@ -133,6 +133,10 @@ function NewSection() {
           <ShinyText text="Discover Now" speed={3} />
           <ArrowRight />
         </DiscoverButton>
+        <DiscoverButton href="/virtual-controller">
+          <ShinyText text="Try Our VC" speed={3} />
+          <ArrowRight />
+        </DiscoverButton>
       </ContentWrapper>
     </SectionWrapper>
   );
