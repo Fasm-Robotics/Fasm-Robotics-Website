@@ -6,6 +6,11 @@ import banc from '../../assets/arm/banc.jpg';
 
 const slides = [
   {
+    image: banc,
+    title: 'August Update',
+    description: 'Try our VC on the website',
+  },
+  {
     image: main,
     title: 'July Update',
     description: 'We linked the shoulder to forarms',
@@ -14,11 +19,6 @@ const slides = [
     image: poing,
     title: 'June Update',
     description: 'We linked the Shoulder to the software',
-  },
-  {
-    image: banc,
-    title: 'May Update',
-    description: 'The software is now able to control the arm',
   },
 ];
 
